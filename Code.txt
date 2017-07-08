@@ -1,0 +1,27 @@
+int arrSize = 5 , num = 10 ;
+int main ( )
+{
+	Start :
+	int * p_darr = new int [ arrSize ] ;
+	for ( int k = 0 ; k < arrSize ; k = k + 1 )
+	{
+		p_darr [ k ] = k ;
+	}
+	for ( int i = 0 ; i < arrSize ; i = i + 1 )
+	{
+		int and = p_darr [ i ] & num ;
+		int or = p_darr [ i ] | num ;
+		int notOr = p_darr [ i ] ^ num ;
+		int left = p_darr [ i ] << num ;
+		int right = p_darr [ i ] >> num ;
+		int XOR = ~ p_darr [ i ] ;
+		p_darr [ i ] &= num ;
+		p_darr [ i ] |= num ;
+		p_darr [ i ] ^= num ;
+		p_darr [ i ] <<= num ;
+		p_darr [ i ] >>= num ;
+	}
+	delete [ ] p_darr ;
+	goto Start ;
+	return 0 ;
+}
